@@ -1,0 +1,84 @@
+// Programmer: Mocnangan Grant
+// Date: 9/6/2024
+// Lab challenge #3
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+
+    double sum1, sum2, sum3;
+    int quantity1, quantity2, quantity3;
+
+    
+    System.out.print("Enter the price of item 1: ");
+    sum1 = scanner.nextDouble();
+
+    System.out.print("Enter the quantity of item 1: ");
+    quantity1 = scanner.nextInt();
+
+    System.out.print("Enter the price of item 2: ");
+    sum2 = scanner.nextDouble();
+
+    System.out.print("Enter the quantity of item 2: ");
+    quantity2 = scanner.nextInt();
+
+    System.out.print("Enter the price of item 3: ");
+    sum3 = scanner.nextDouble();
+
+    System.out.print("Enter the quantity of item 3: ");
+    quantity3 = scanner.nextInt();
+
+    double subtotal =  (sum1 * quantity1) + (sum2 * quantity2) + (sum3 * quantity3);
+
+    double discount = subtotal * 0.05;
+    double discountedsubtotal = subtotal - discount;
+    double salesTax = discountedsubtotal * 0.12;
+    double finalTotal = discountedsubtotal + salesTax;
+        
+    // Output the results
+    System.out.print("Subtotal: PHP" + subtotal + "0" + "\n");
+    System.out.print("Discount: PHP" + discount + "0" + "\n");
+    System.out.print("SalesTax: PHP" + salesTax + "0" + "\n");
+    System.out.print("Final Total: PHP" + finalTotal + "0");
+    
+  }
+  
+}
+
+
+
+// Programmer: Mocnangan Grant
+// Date: 9/6/2024
+// Lab challenge #4
+package discountcalculator;
+import java.util.Scanner;
+
+
+public class DiscountCalculator {
+
+    
+    public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("Enter the total purchase amount: ");
+         double total = scanner.nextDouble();
+         
+         double discount;
+         if (total >=1000 && total <= 0) {
+            discount= 0;
+           
+        } else if (total >= 1000 && total <= 5000) {
+            discount = 0.5;
+           
+        } else if (total >= 5001 && total <= 10000) {
+            discount = 0.10;
+           
+        } else {
+            discount = 0.15;
+        }
+        double discountedtotal = total- (total * discount);
+        
+        System.out.println("Discount applied " + (int)(discount * 100) + "%");
+        System.out.println("Final price after discount " + (int) discountedtotal);
+        }
+    }
